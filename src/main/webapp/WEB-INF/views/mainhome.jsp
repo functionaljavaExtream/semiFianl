@@ -1,3 +1,5 @@
+<%@page import="java.io.Console"%>
+<%@page import="mul.cam.food.dto.MemberDto"%>
 <%@page import="mul.cam.food.dto.BbsDto"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,11 +8,14 @@
 
 <%
 List<BbsDto> food = (List<BbsDto>) request.getAttribute("food");
+List<BbsDto> recent = (List<BbsDto>) request.getAttribute("recent"); 
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HOME BOB</title>
 
 <link rel="icon" href="resources/images/logo.png">
@@ -50,6 +55,16 @@ List<BbsDto> food = (List<BbsDto>) request.getAttribute("food");
 <!-- <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
 
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+
 <style type="text/css">
 body {
 	margin: 0;
@@ -58,6 +73,10 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+img {
+	width: 100% !important;
 }
 
 header {
@@ -167,7 +186,7 @@ main {
 } */
 .card p img {
 	max-width: 100% !important;
-	height: 400px !important;
+	height: 370px !important;
 }
 
 /* .card-one {
@@ -221,16 +240,17 @@ main {
 	float: left;
 	background-color: green;
 } */
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1350px) {
 	.g-3 {
 		width: 1300px;
 		margin: 0 auto;
 	}
 	.input-group {
-		width: 1200px;
+		width: 1256px;
 		margin: 50px auto;
 	}
 }
+
 /* footer {
 	width: 100%;
 	height: 140px;
@@ -268,11 +288,13 @@ footer #footer-text p {
 	text-align: center;
 } */
 .carousel-control-prev-icon:after {
-	content: "";
+	content: "◀";
+	font-size: 50px;
 }
 
 .carousel-control-next-icon:after {
-	content: "";
+	content: "▶";
+	font-size: 50px;
 }
 
 .carousel-indicators [data-mdb-target] {
@@ -297,7 +319,156 @@ footer #footer-text p {
 .carousel-item h5 {
 	font-size: 2.25rem;
 }
+
+@media
+screen
+and
+(min-width:1024px)
+{
+.tag-style {
+	text-align: center;
+	font-size: 24px;
+	border: 2px solid orange;
+	border-radius: 31px;
+	padding: 5px 0;
+}
+
+.tag-style a {
+	width: 100%;
+	display: inherit;
+}
+
+.small-img {
+	height: 400px;
+	background-color: #fff9ee;
+}
+
+.small-img p img {
+	height: 200px !important;
+}
+
+.small-img p {
+	margin-top: 20px;
+}
+
+}
+.small-img:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.arrow-img {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+}
+
+.tag-style a:hover {
+	text-decoration: underline;
+}
+
+.card-ceter-title {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.card-bottom-title {
+	text-align: center;
+}
+
+.carousel-item {
+	transition-duration: .9s;
+}
+
+.my-change {
+	transition: transform 1.2s ease-in-out;
+	transition-duration: 1s;
+}
+
+@media screen and (max-width:1023px) {
+	.small-img p img {
+		height: 160px !important;
+		background-color: orange;
+	}
+}
+
+.cursor-change {
+	cursor: pointer;
+}
+
+.drop-StyleChange {
+	top: 82px !important;
+	left: 0 !important;
+}
+
+.dropdown-item {
+	font-size: 16px;
+}
+
+.m-1 {
+	display: inline;
+	font-size: 20px;
+	padding: 5px 10px !important;
+	margin: 0.7rem !important;
+}
+
+.btn-floating, [class*=btn-outline-].btn-floating { --
+	-mdb-btn-border-radius: 0% !important;
+}
+
+@media screen and (min-width:1450px) {
+	.center-image {
+		width: 100%;
+		background-color: rgb(244, 238, 231);
+		margin: 50px 0;
+	}
+	.center-style {
+		width: 1400px;
+		margin: 0 auto;
+	}
+	.image-label-style {
+		position: absolute;
+		left: auto;
+		top: 130%;
+		font-size: 35px;
+		font-weight: 700;
+	}
+}
+
+@media screen and (min-width:950px) and (max-width:1450px) {
+	.center-image {
+		width: 100%;
+		background-color: rgb(244, 238, 231);
+		margin: 50px 0;
+	}
+	.center-style {
+		width: 800px;
+		margin: 0 auto;
+		height: 350px;
+	}
+	.image-label-style {
+		position: absolute;
+		left: auto;
+		top: 1660px;
+		font-size: 30px;
+		font-weight: 700;
+	}
+	.small-img {
+		height: 383px;
+		background-color: #fff9ee;
+	}
+	.d-flex {
+		margin-top: 50px;
+	}
+	.minmax2 {
+		font-size: 23px !important;
+	}
+	.card-bottom-title {
+		font-size: 23px;
+	}
+}
 </style>
+
 </head>
 
 <body>
@@ -324,9 +495,77 @@ footer #footer-text p {
 		headerNav end
 	</header> -->
 
-	<!-- Navbar -->
+	<!-- login 전일 때 나오는 Navbar -->
+	<%
+	MemberDto login = (MemberDto) session.getAttribute("login");
+
+
+//	System.out.println("mainhome.jsp "+login);
+
+	if (login == null ) {
+	%>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"
-		style="background-color: red !important;">
+		style="background-color: orange !important">
+		<!-- Container wrapper -->
+		<div class="container-fluid" style="height: 100px; font-weight: 700;">
+			<!-- Toggle button -->
+			<button class="navbar-toggler" type="button"
+				data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<!-- Collapsible wrapper -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Navbar brand -->
+				<a class="navbar-brand mt-2 mt-lg-0" href="#"> 
+				<img
+					src="resources/images/logo.png" height="100" alt="Logo"
+					loading="lazy" />
+				</a>
+				<!-- Left links -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item" data-toggle="dropdown">
+						<div class="dropdown">
+							<a class="nav-link dropdown-toggle" href=" #" role="button"
+								data-mdb-toggle="dropdown" aria-expanded="false">카테고리 </a>
+
+							<ul class="dropdown-menu dropdown-menu-end drop-StyleChange"
+								aria-labelledby="navbarDropdownMenuAvatar">
+								<li><a class="dropdown-item" href="#">종류</a></li>
+								<li><a class="dropdown-item" href="#">재료</a></li>
+								<li><a class="dropdown-item" href="#">방법</a></li>
+								<li><a class="dropdown-item" href="#">테마</a></li>
+								<li><a class="dropdown-item" href="#">기념일</a></li>
+								<li><a class="dropdown-item" href="#">게시판 바로가기</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="bbslist.do">게시판</a></li>
+					<li class="nav-item"><a class="nav-link" href="login.do">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="regi.do">회원가입</a></li>
+				</ul>
+				<!-- Left links -->
+			</div>
+			<!-- Collapsible wrapper -->
+
+			<!-- Right elements -->
+			<!-- Right elements -->
+		</div>
+		<!-- Container wrapper -->
+	</nav>
+	<%
+	}
+	%>
+	<!-- Navbar -->
+
+	<%
+	if (login != null ) {
+	%>
+	<!-- login 하면 나오는 Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"
+		style="background-color: orange !important">
 		<!-- Container wrapper -->
 		<div class="container-fluid" style="height: 100px; font-weight: 700;">
 			<!-- Toggle button -->
@@ -346,54 +585,62 @@ footer #footer-text p {
 				</a>
 				<!-- Left links -->
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="#">카테고리</a></li>
-					<li class="nav-item"><a class="nav-link" href="login.do">로그인</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
+					<li class="nav-item" data-toggle="dropdown">
+						<div class="dropdown">
+							<a class="nav-link dropdown-toggle" href=" #" role="button"
+								data-mdb-toggle="dropdown" aria-expanded="false">카테고리 </a>
+
+							<ul class="dropdown-menu dropdown-menu-end drop-StyleChange"
+								aria-labelledby="navbarDropdownMenuAvatar">
+								<li><a class="dropdown-item" href="#">종류</a></li>
+								<li><a class="dropdown-item" href="#">재료</a></li>
+								<li><a class="dropdown-item" href="#">방법</a></li>
+								<li><a class="dropdown-item" href="#">테마</a></li>
+								<li><a class="dropdown-item" href="#">기념일</a></li>
+								<li><a class="dropdown-item" href="#">게시판 바로가기</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="bbslist.do">게시판</a></li>
 				</ul>
 				<!-- Left links -->
 			</div>
 			<!-- Collapsible wrapper -->
 
 			<!-- Right elements -->
-			<div class="d-flex align-items-center">
-				<!-- Icon -->
-				<a class="text-reset me-3" href="#"> <i
-					class="fas fa-shopping-cart"></i>
+			<div class="dropdown">
+				<p id="demo"></p>
+				<p style="margin: 0 15px 0 0; height: 38px;"><%=login.getUserId()%>
+					님 반갑습니다!
+				</p>
+			</div>
+			
+			<div class="dropdown">
+				<a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+					href="#" id="navbarDropdownMenuAvatar" role="button"
+					data-mdb-toggle="dropdown" aria-expanded="false"> <img
+					src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+					class="rounded-circle" height="25"
+					alt="Black and White Portrait of a Man" loading="lazy" />
 				</a>
 
-				<!-- Notifications -->
-				<div class="dropdown">
-					<a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
-						id="navbarDropdownMenuLink" role="button"
-						data-mdb-toggle="dropdown" aria-expanded="false"> <i
-						class="fas fa-bell"></i> <span
-						class="badge rounded-pill badge-notification bg-danger">1</span>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-end"
-						aria-labelledby="navbarDropdownMenuLink">
-						<li><a class="dropdown-item" href="#">Some news</a></li>
-						<li><a class="dropdown-item" href="#">Another news</a></li>
-						<li><a class="dropdown-item" href="#">Something else here</a>
-						</li>
-					</ul>
-				</div>
-				<!-- Avatar -->
-				<div class="dropdown">
-					<a class="dropdown-toggle d-flex align-items-center hidden-arrow"
-						href="#" id="navbarDropdownMenuAvatar" role="button"
-						data-mdb-toggle="dropdown" aria-expanded="false"> <img
-						src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-						class="rounded-circle" height="25"
-						alt="Black and White Portrait of a Man" loading="lazy" />
-					</a>
-					<ul class="dropdown-menu dropdown-menu-end"
-						aria-labelledby="navbarDropdownMenuAvatar">
-						<li><a class="dropdown-item" href="#">My profile</a></li>
-						<li><a class="dropdown-item" href="#">Settings</a></li>
-						<li><a class="dropdown-item" href="#">Logout</a></li>
-					</ul>
-				</div>
+				<ul class="dropdown-menu dropdown-menu-end"
+					aria-labelledby="navbarDropdownMenuAvatar">
+					<li><a class="dropdown-item" href="#">My profile</a></li>
+				 	<%
+					if(login.getAuth().equals("1")){
+					%>
+					<li><a class="dropdown-item" href="adminList.do">회원관리</a></li>
+					<%	
+					}
+					%> 
+					<li><a class="dropdown-item" href="setting.do?login=" + <%=login %> >Settings</a></li>
+					<li><a class="dropdown-item" onclick="navLogout()">Logout</a></li>
+				</ul>
 			</div>
+			<%
+			}
+			%>
 			<!-- Right elements -->
 		</div>
 		<!-- Container wrapper -->
@@ -402,7 +649,7 @@ footer #footer-text p {
 
 	<!-- main-image  -->
 	<div id="carouselExampleIndicators" class="carousel slide"
-		data-mdb-ride="carousel">
+		data-mdb-ride="carousel" style="margin-bottom: 50px">
 		<div class="carousel-indicators">
 			<button type="button" data-mdb-target="#carouselExampleIndicators"
 				data-mdb-slide-to="0" class="active" aria-current="true"
@@ -433,7 +680,7 @@ footer #footer-text p {
 					<h5>쉽고 빠르게</h5>
 					<h5>초보 레시피</h5>
 					<p>카레 샥슈카</p>
-					</div>
+				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="resources/images/ohk_main33.jpg" class="d-block w-100"
@@ -460,257 +707,183 @@ footer #footer-text p {
 		</div>
 		<button class="carousel-control-prev" type="button"
 			data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"><img
-				src="resources/images/prev.png" style="width: 80px; height: 80px;" /></span>
-			<span class="visually-hidden"></span>
+			<span class="carousel-control-prev-icon arrow-img" aria-hidden="true">
+				<!-- <img
+				src="resources/images/prev.png" style="width: 80px; height: 80px;" /> -->
+			</span> <span class="visually-hidden"></span>
 		</button>
 		<button class="carousel-control-next" type="button"
 			data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"><img
-				src="resources/images/next.png" style="width: 80px; height: 80px;" /></span>
-			<span class="visually-hidden">Next</span>
+			<span class="carousel-control-next-icon arrow-img" aria-hidden="true">
+				<!-- <img
+				src="resources/images/next.png" style="width: 80px; height: 80px;" /> -->
+			</span> <span class="visually-hidden">Next</span>
 		</button>
 	</div>
 	<!-- main-image end -->
 
 	<main>
-		<!-- <div class="input-group">
-			<input type="search" class="form-control rounded"
+
+		<div class="input-group">
+			<form class="input-group" action="searchMove.do" method="post">
+			<input type="search" class="form-control rounded" name="search"
 				placeholder="Search" aria-label="Search"
 				aria-describedby="search-addon" style="height: 65px;" />
-			<button type="button" class="btn btn-outline-primary">search</button>
+			<input type="hidden" value="title" name="choice">	
+			<button type="submit" class="btn btn-outline-primary">search</button>
+			</form>
 		</div>
 
-		<div id="carouselExampleIndicators" class="carousel slide"
-			data-mdb-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-mdb-target="#carouselExampleIndicators"
-					data-mdb-slide-to="0" class="active" aria-current="true"
-					aria-label="Slide 1"></button>
-				<button type="button" data-mdb-target="#carouselExampleIndicators"
-					data-mdb-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-mdb-target="#carouselExampleIndicators"
-					data-mdb-slide-to="2" aria-label="Slide 3"></button>
-			</div>
+		<div id="carouselExampleControls" class="carousel carousel-dark slide"
+			data-bs-ride="carousel">
 			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-						class="d-block w-100" alt="Wild Landscape" />
-				</div>
-				<div class="carousel-item">
-					<img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-						class="d-block w-100" alt="Camera" />
-				</div>
-				<div class="carousel-item">
-					<img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-						class="d-block w-100" alt="Exotic Fruits" />
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button"
-				data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div> -->
+				<div class="carousel-item my-change active">
+					<div
+						class="card-wrapper container-sm d-flex  justify-content-around">
+						<div class="card  " style="width: 18rem;">
+							<div class="card-body">
+								<h5 class="card-title minmax2"
+									style="font-weight: 700; margin-top: 10px;">이건 어때요?</h5>
+								<h5 class="card-title minmax2" style="font-weight: 700;">추천
+									검색어</h5>
+								<p class="tag-style" style="margin-top: 40px;">
+									<a href="#">#간편식</a>
+								</p>
+								<p class="tag-style">
+									<a href="#">#간단</a>
+								</p>
+								<p class="tag-style">
+									<a href="#">#집밥</a>
+								</p>
+							</div>
+						</div>
 
-		<div
-			style="width: 100%; background-color: rgb(244, 238, 231); margin: 50px 0">
-			<div style="width: 1400px; margin: 0 auto;">
+						<%
+						for (int i = 0; i < 3; i++) {
+							BbsDto dto = recent.get(i);
+						%>
+						<div class="card small-img recipe-bbs-move"
+							onclick="recipeMove(<%=dto.getSeq()%>)" style="width: 18rem;">
+							<h4 class="card-ceter-title">
+								<b>신규 레시피</b>
+							</h4>
+							<%=dto.getThumbnail()%>
+							<div class="card-body">
+								<h4 class="card-title card-bottom-title"><%=dto.getTitle()%></h4>
+							</div>
+						</div>
+						<%
+						}
+						%>
+
+
+					</div>
+				</div>
+				<div class="carousel-item my-change">
+					<div
+						class="card-wrapper container-sm d-flex   justify-content-around">
+						<%
+						for (int i = 3; i < 7; i++) {
+							BbsDto dto = recent.get(i);
+						%>
+						<div class="card small-img recipe-bbs-move"
+							onclick="recipeMove(<%=dto.getSeq()%>)" style="width: 18rem;">
+							<h4 class="card-ceter-title">
+								<b>신규 레시피</b>
+							</h4>
+							<%=dto.getThumbnail()%>
+							<div class="card-body">
+								<h4 class="card-title card-bottom-title"><%=dto.getTitle()%></h4>
+							</div>
+						</div>
+						<%
+						}
+						%>
+					</div>
+				</div>
+
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carouselExampleControls" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"></script>
+
+		<div class="center-image">
+			<div class="center-style">
 				<img src="resources/images/testimage.jpg" class="img-fluid"
-					alt="중간이미지" style="width: 100%; height: 400px;" />
+					alt="중간이미지" style="width: 100%; height: 350px;" />
+				<div>
+					<div class="d-flex justify-content-center align-items-center h-100">
+						<p class="text-white mb-0 image-label-style">평점이 높은 추천레시피를
+							확인하세요!</p>
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<!-- searchMenu end -->
 		<div id="recipe-post">
-					<h2
-				style="margin: 0 auto; text-align: center; font-weight: 700; color: #333333;" onclick="location.href='bbslist.do'">추천레시피</h2>
+			<h2
+				style="margin: 0 auto; text-align: center; font-weight: 700; color: #333333;">추천레시피</h2>
 
-	
-			<%-- <div class="card">
+			<div class="row row-cols-3 g-3">
 				<%
 				for (int i = 0; i < 6; i++) {
 					BbsDto dto = food.get(i);
 				%>
-				<!-- <p class="card-img-top"></p> -->
-				<div class="card-one">
-					<%=dto.getThumbnail()%>
-					<div class="card-body">
-						<h5 class="card-title"><%=dto.getTitle()%></h5>
-						<p class="card-text"><%=dto.getTag()%></p>
-						<a href="#!" class="btn btn-primary">Button</a>
+				<div class="col">
+					<div class="card bg-image hover-zoom cursor-change recipe-bbs-move"
+						onclick="recipeMove(<%=dto.getSeq()%>)">
+						<%=dto.getThumbnail()%>
+						<div class="card-body">
+							<h5 class="card-title"><%=dto.getTitle()%></h5>
+							<p class="card-text"><%=dto.getTag()%></p>
+						</div>
 					</div>
 				</div>
 				<%
 				}
 				%>
-			</div> --%>
-			<%-- <div id="recipe-post-left">
-				<table style="width: 600px;">
-					<tbody>
-						<%
-						for (int i = 0; i < 3; i++) {
-							BbsDto dto = food.get(i);
-							if (i == 0) {
-						%>
-						<tr class="imgSize">
-							<td colspan="2"><%=dto.getThumbnail()%>
-								<h3><%=dto.getTitle()%></h3>
-								<h4><%=dto.getTag()%></h4></td>
-						</tr>
-						<%
-						} else {
-						%>
-						<tr class="imgSizeSmall">
-							<td><%=dto.getThumbnail()%>
-								<h3><%=dto.getTitle()%></h3>
-								<h4><%=dto.getTag()%></h4></td>
-						</tr>
-						<%
-						}
-						}
-						%>
-					</tbody>
-				</table>
 			</div>
-			<!-- recipe-post-left end -->
-			<div id="recipe-post-right">
-				<table style="width: 600px;">
-					<tbody>
-						<%
-						for (int i = 3; i < 6; i++) {
-							BbsDto dto = food.get(i);
-							if (i == 5) {
-						%>
-						<tr class="imgSize">
-							<td colspan="2"><%=dto.getThumbnail()%>
-								<h3><%=dto.getTitle()%></h3>
-								<h4><%=dto.getTag()%></h4></td>
-						</tr>
-						<%
-						} else {
-						%>
-						<tr class="imgSizeSmall">
-							<td><%=dto.getThumbnail()%>
-								<h3><%=dto.getTitle()%></h3>
-								<h4><%=dto.getTag()%></h4></td>
-						</tr>
-						<%
-						}
-						}
-						%>
-					</tbody>
-				</table>
-			</div> --%>
-			<!-- recipe-post-right end -->
 		</div>
-		<!-- recipe-post end -->
-
-		<%-- <div class="row">
-			<%
-			for(int i =0; i<6; i++){
-				BbsDto dto = food.get(i);
-			%>
-			<div class="col-sm-6">
-				<div class="card">
-					<div class="card-body">
-						<%=dto.getThumbnail() %>
-						<h5 class="card-title"><%=dto.getTitle()%></h5>
-						<p class="card-text"><%=dto.getTag()%></p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
-			<%
-			}
-			%>		
-		</div> --%>
-
-		<%-- <div class="row row-cols-2 g-3">
-			<%
-			for (int i = 0; i < 6; i++) {
-				BbsDto dto = food.get(i);
-			%>
-			<div class="col">
-				<div class="card">
-					<%=dto.getThumbnail()%>
-					<div class="card-body">
-						<h5 class="card-title"><%=dto.getTitle()%></h5>
-						<p class="card-text"><%=dto.getTag()%></p>
-					</div>
-				</div>
-			</div>
-			<%
-			}
-			%>
-		</div> --%>
-
-		<div class="row row-cols-3 g-3">
-				<%
-		if(food == null || food.size() == 0){
-		%>
-			<div class="col">
-				<div class="card bg-image hover-zoom">
-					작성된 글이 없습니다.
-				</div>
-			</div>
-
-	    <%
-		}else{
-		%>
-		
-		
-			<%
-			for (int i = 0; i < food.size(); i++) {
-				BbsDto dto = food.get(i);
-			%>
-			<div class="col">
-				<div class="card bg-image hover-zoom">
-					<%=dto.getThumbnail()%>
-					<div class="card-body">
-						<h5 class="card-title"><%=dto.getTitle()%></h5>
-						<p class="card-text"><%=dto.getTag()%></p>
-					</div>
-				</div>
-			</div>
-			<%
-			}
-		}
-			%>
-		</div>
-
 	</main>
 
 	<!-- Footer -->
-	<footer class="bg-dark text-center text-white">
+	<footer class="bg-dark text-center text-white"
+		style="margin-top: 50px;">
 		<!-- Grid container -->
 		<div class="container p-4">
 			<!-- Section: Social media -->
 			<section class="mb-4">
 				<!-- Facebook -->
-				<a class="btn btn-outline-light btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-facebook-f"> <img
-						src="resources/images/facebook.png">
-				</i></a>
+				<a class="btn btn-outline-light m-1" href="#!" role="button"><i
+					class="fab fa-facebook-f">FaceBook </i></a>
 
 				<!-- Twitter -->
-				<a class="btn btn-outline-light btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-twitter"></i></a>
+				<a class="btn btn-outline-light  m-1" href="#!" role="button"><i
+					class="fab fa-twitter">Youtube</i></a>
 
 				<!-- Google -->
-				<a class="btn btn-outline-light btn-floating m-1" href="#!"
-					role="button"><i class="fab fa-google"></i></a>
+				<a class="btn btn-outline-light m-1" href="#!" role="button"><i
+					class="fab fa-google">Instagram</i></a>
 			</section>
 			<!-- Section: Social media -->
 
 			<!-- Section: Text -->
 			<section class="mb-4">
-				<p>3조 프로젝트</p>
+				<p>3조 프로젝트 HOME BOB</p>
 			</section>
 			<!-- Section: Text -->
 		</div>
@@ -722,41 +895,22 @@ footer #footer-text p {
 			Copyright2023.Multicampus_3조</div>
 		<!-- Copyright -->
 	</footer>
-	<!-- Footer -->
-	<!-- <footer>
-		<div id="footer">
-			<div id="footer-text">
-				<p style="margin-top: 20px;">HOME BOB</p>
-				<p>3조 프로젝트</p>
-				<p style="margin-top: 40px;">Copyright2023.Multicampus_3조.All
-					rights reserved.</p>
-			</div>
-			<div id="footer-icon">
-				<ul>
-					<li>Blog</li>
-					<li>Youtube</li>
-					<li>Instagram</li>
-				</ul>
-			</div>
-		</div>
-	</footer> -->
 
 	<script type="text/javascript">
-	
-	$(document).on('mouseover', '.card', function () {
-	
-		
-		
-		/* $(document).ready(function() {
-			
-			
-			/* // header 카테고리 메뉴 접고 펼치기 */
-			/* $(".categoryBtn").click(function() {
-				//	alert("테스트");
-				$(this).next("ul").toggleClass("categoryHide");
-			});
 
-		}); */
+	 function recipeMove(seq) {
+		location.href="bbsdetail.do?seq=" + seq;
+	}
+	function navLogout() {
+		location.href="sessionOut.do";
+	}
+	
+	<%-- $(document).ready(function(){
+		location.reload("mainhome.do?login=" + <%=login %>);
+	}); --%>
+	
+
 	</script>
+
 </body>
 </html>
